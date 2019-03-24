@@ -35,11 +35,9 @@
     const pickedNumbers = [];
     const howManyNumbersToPick = 6;
 
-    for (let i = 0; i < howManyNumbersToPick; i++) {
+    while (pickedNumbers.length < howManyNumbersToPick) {
       const randomNumber = Math.floor(Math.random() * Math.floor(max));
-      if (randomNumber === 0 || pickedNumbers.indexOf(randomNumber) >= 0) {
-        i--;
-      } else {
+      if (randomNumber !== 0 && pickedNumbers.indexOf(randomNumber) === -1) {
         pickedNumbers.push(randomNumber);
       }
     }
